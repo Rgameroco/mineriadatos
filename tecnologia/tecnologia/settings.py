@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tecnologia.apps.core',
+    'apps.core',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'tecnologia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tecnologias',
+        'NAME': 'tecnologia',
         'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': 'localhost',
