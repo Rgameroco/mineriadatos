@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'tecnologia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tecnologia',
+        'NAME': 'ejemplo1',
         'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': 'localhost',
