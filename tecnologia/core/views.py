@@ -22,3 +22,7 @@ def variables(request):
     t = get_template('variables.html')
     html = t.render({},request)
     return HttpResponse(html)
+def principal(request):
+    t = get_template('principal.html')
+    return HttpResponse(t.render({},request))
+

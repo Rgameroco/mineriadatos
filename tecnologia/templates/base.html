@@ -12,7 +12,8 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
-  <link href="{% static 'css/material-dashboard.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/material-dashboard.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/core/jquery.min.js' %}"></script>
 </head>
 
 <body>
@@ -34,31 +35,31 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="#0">
+            <a class="nav-link" href="http://localhost:8000/principal">
               <i class="material-icons">dashboard</i>
               <p>Principal</p>
             </a>
           </li>
           <li class = "nav-item active">
-            <a class = "nav-link" href="#0">
+            <a class = "nav-link" href="http://localhost:8000/index/">
               <i class = "material-icons">person</i>
               <p>Perfil</p>
             </a>
           </li>
           <li class = "nav-item active">
-            <a class = "nav-link" href="#0">
+            <a class = "nav-link" href="http://localhost:8000/sensorhumedad/">
               <i class = "material-icons">SH</i>
               <p>Sensor Humedad</p>
             </a>
           </li>
             <li class = "nav-item active">
-            <a class = "nav-link" href="#0">
+            <a class = "nav-link" href="http://localhost:8000/tipoconstruccion/">
               <i class = "material-icons">TP</i>
               <p>Tipo Construcción</p>
             </a>
           </li>
              <li class = "nav-item active">
-            <a class = "nav-link" href="#0">
+            <a class = "nav-link" href="http://localhost:8000/variables/">
               <i class = "material-icons">VR</i>
               <p>Variables</p>
             </a>
@@ -71,7 +72,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Dashboard</a>
+            <a class="navbar-brand" href="#pablo">Sensor Humedad</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -98,27 +99,6 @@
           {% endblock content %}
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-          <!-- your footer here -->
-        </div>
-      </footer>
     </div>
   </div>
 </body>

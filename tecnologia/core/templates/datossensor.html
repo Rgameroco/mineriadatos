@@ -15,37 +15,33 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Modelo</label>
-                          <input type="text" class="form-control">
+                          <input id="inpt_modelo" type="text" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Tipo de medida</label>
-                          <input type="text" class="form-control">
+                          <input id="inpt_tipomedida" type="text" class="form-control">
                         </div>
                       </div>
                         <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Margen de error</label>
-                          <input type="number" step="0.01" class="form-control">
+                          <input id="inpt_margenerror" type="number" step="0.01" class="form-control">
                         </div>
                       </div>
                          <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Contraseña</label>
-                          <input type="password" class="form-control">
-                        </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha de compra</label>
-                          <input type="date" class="form-control">
+                          <input id="inpt_fechacompra" type="date" class="form-control">
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary pull-right">Guardar</button>
+                    <button id="btn_guardar" type="submit" class="btn btn-primary pull-right" onclick="guardar()">Guardar</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
@@ -54,4 +50,24 @@
           </div>
         </div>
       </div>
+    <script>
+    function guardar() {
+        console.log('entro aqui datossensor')
+        var urls = '{% url 'core:insert_sensor' %}'
+        var modelo = document.getElementById("inpt_modelo").value
+        var tipomedida = document.getElementById("inpt_tipomedida").value
+        var margenerror = document.getElementById("inpt_margenerror").value
+        var fechacompra = document.getElementById("inpt_fechacompra").value
+        data = {
+            modelo : modelo,
+            tipomedida : tipomedida,
+            margenerror: margenerror,
+            fechacompra: fechacompra
+        }
+        console.log(urls,data)
+        $.post(urls,{modelo:modelo,tipomedida:tipomedida,margenerror:margenerror,fechacompra:fechacompra}).fail(function (xhr,status,error) {
+                console.log(error)
+            })
+    }
+    </script>
 {% endblock content %}

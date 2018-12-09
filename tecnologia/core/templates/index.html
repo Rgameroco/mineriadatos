@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
       <div class="content">
-        <div class="container-fluid">
           <div class="row">
             <div class="col-md-8">
               <div class="card">
@@ -15,35 +14,48 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nombres</label>
-                          <input type="text" class="form-control">
+                          <input id="inpt_nombre" type="text" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Apellidos</label>
-                          <input type="text" class="form-control">
+                          <input id="inpt_apellidos"type="text" class="form-control">
                         </div>
                       </div>
                         <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">DNI</label>
-                          <input type="text" class="form-control">
+                          <input id="inpt_dni"type="text" class="form-control">
                         </div>
                       </div>
                          <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Contraseña</label>
-                          <input type="password" class="form-control">
+                          <input id="inpt_contrasenha" type="password" class="form-control">
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary pull-right">Guardar</button>
+                    <button id="btn_guardar" class="btn btn-primary pull-right" onclick="servicioInsert()">GuardarXXX</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
+    <script>
+        function servicioInsert() {
+            console.log('hola mundo')
+            var urls ='{% url 'cores:insert_persona' %}'
+            var nombre = document.getElementById("inpt_nombre").value
+            var apellido = document.getElementById("inpt_apellidos").value
+            var dni =  document.getElementById("inpt_dni").value
+            var contrasenha =  document.getElementById("inpt_contrasenha").value
+            console.log(urls)
+            $.post(urls,{nombre : nombre, apellido: apellido, dni:dni,contrasenha:contrasenha}).fail(function (xhr,status,error) {
+                console.log(error)
+            })
+        }
+    </script>
 {% endblock content %}
