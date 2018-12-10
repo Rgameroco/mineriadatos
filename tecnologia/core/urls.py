@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from core.views import index,sensorhumedad,tipoconstruccion,variables,principal
+from core.views import index,sensorhumedad,tipoconstruccion,variables,principal,mostrarPerfil,prediccion
 from core.api import insert
 from django.urls import path
 
@@ -11,6 +11,8 @@ urlpatterns= [
     url(r'^variables/$',variables,name='variables'),
     url(r'^principal/$',principal,name='principal'),
     url(r'^$',principal,name='principal'),
+    url(r'^mostrarPerfil/',mostrarPerfil,name='mostrarPerfil'),
+    url(r'^prediccion/',prediccion,name='prediccion'),
 
     path('personaint/',insert.guardarDatos,name='insert_persona'),
     path('sensornew/',insert.guardarSensor,name='insert_sensor')

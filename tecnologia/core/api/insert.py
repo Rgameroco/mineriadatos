@@ -3,6 +3,9 @@ from django.views import View
 from core.models import persona,rol,sensorhumedad
 from django.views.decorators.csrf import csrf_exempt
 import json
+import datetime
+
+now = datetime.datetime.now()
 @csrf_exempt
 def guardarDatos(request):
         print('entro aqui')
@@ -17,14 +20,14 @@ def guardarDatos(request):
                     contrasenha = contrasenha)
         p.save()
         return HttpResponse(request)
-
+@csrf_exempt
 def guardarSensor(request):
     print('entra')
     modelo = request.POST.get('modelo','')
     tipomedida = request.POST.get('tipomedida','')
-    margenerror = request.POST.get('margenerror','')
-    fechacompra = request.POST.get('fechacompra','')
-    print(type(margenerror))
-    temp = sensorhumedad(modelo = modelo,tipomedida=tipomedida,margenerror=margenerror,fechacompra=fechacompra)
+    margenerror = float(request.POST.get('margenerror',''))
+    fechacompra = now
+    print(float(margenerror))
+    temp = sensorhumedad(modelo = modelo,tipomedida=tipomedida,margenerrror=margenerror,fechacompra=fechacompra)
     temp.save()
     return HttpResponse('Enviado exitoso')

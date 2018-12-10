@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Predecir</h4>
+                  <p class="card-category">Tu predicción</p>
+                </div>
+                <div class="card-body">
+                 <form>
+                     <div class="row">
+                        <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Temperatura</label>
+                            <input id="inpt_temperatura" type="text" class="form-control" disabled value="{{temperatura}}">
+                        </div>
+                      </div>
+                        <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Humedad</label>
+                            <input id="inpt_humedad" type="text" class="form-control" disabled value="{{ humedad }}">
+                        </div>
+                      </div>
+                    </div>
+                    <button id="predecir" type="submit" class="btn btn-primary pull-right">Predecir</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock content %}
